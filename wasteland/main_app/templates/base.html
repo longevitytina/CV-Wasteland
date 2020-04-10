@@ -21,7 +21,7 @@
           <li><a href="/about">About</a></li>
           <li><a href="/#">Items</a></li>
           {% if user.is_authenticated %}
-          <li><a href="/#">Profile</a></li>
+          <li><a href="/profile">Profile</a></li>
           <li><a href="{% url 'logout' %}">Log Out</a></li>
           {% endif %}
         </ul>

@@ -23,7 +23,7 @@ ITEM_TYPES = (
 class Item(models.Model):
     name = models.CharField(max_length = 100)
     description = models.TextField(max_length = 100)
-    type = modesl.CharField(
+    type = models.CharField(
         max_length = 1,
         choices = ITEM_TYPES,
         default = ITEM_TYPES[0][0]

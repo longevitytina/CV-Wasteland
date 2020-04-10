@@ -8,8 +8,9 @@ def home(request):
     return render(request, 'home.html')
 
 
-def items_list(request):
-    return render(request, 'main_app/item_list.html')
+def items_list(request ):
+    items = Item.objects.all()
+    return render(request, 'main_app/item_list.html', {'items':items})
 
 
 def about(request):

@@ -2,6 +2,16 @@
 {% block content %}
 
 <h1>All items</h1>
+{% for item in items %}
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ item.name }}</span>
+            <p>Description: {{ item.description }}</p>
+            <p>Type: {{ item.type }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
 
 
 

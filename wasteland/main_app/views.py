@@ -15,6 +15,8 @@ def items_index(request):
 def about(request):
     return render(request, 'about.html')
 
+# characters index will be in profile page
+
 
 def characters_index(request):
     characters = Character.objects.all()
@@ -23,5 +25,12 @@ def characters_index(request):
 
 # def characters_detail(request):
 #     characters = Character.objects.get(id=character_id)
+#
 
-# def profile(request):
+
+def profile(request):
+    # list of associated characters
+    characters = Character.objects.all()
+    return render(request, 'profile.html', {'characters': characters})
+
+    # user account info

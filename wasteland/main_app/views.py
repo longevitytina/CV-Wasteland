@@ -23,3 +23,5 @@ def characters_index(request):
 
 # def characters_detail(request):
 #     characters = Character.objects.get(id=character_id)
+
+# def profile(request):

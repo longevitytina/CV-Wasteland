@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import date
+from django.urls import reverse
 
 
 OCCUPATIONS = (
@@ -55,6 +56,9 @@ class Character(models.Model):
 
     def __str__ (self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse("index", kwargs={"pk": self.id})
 
 
 

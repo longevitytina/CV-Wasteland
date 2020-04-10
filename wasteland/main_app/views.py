@@ -8,8 +8,8 @@ def home(request):
     return render(request, 'home.html')
 
 
-def items_index(request):
-    return render(request, 'items/index.html')
+def items_list(request):
+    return render(request, 'main_app/item_list.html')
 
 
 def about(request):
@@ -28,4 +28,5 @@ def profile(request):
     characters = Character.objects.all()
     return render(request, 'profile.html', {'characters': characters})
 
+    # list of associated items
     # user account info

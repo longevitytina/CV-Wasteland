@@ -15,18 +15,19 @@ def items_list(request):
 def about(request):
     return render(request, 'about.html')
 
-# characters index will be in profile page
+def character_detail(request, character_id):
+    character = Character.objects.get(id=character_id)
+    items_character_doesnt_have = Item.objects.exclude(
+        id__in=character.items.all().values_list('id'))
 
-
-# def characters_detail(request):
-#     characters = Character.objects.get(id=character_id)
-#
-
+    context = {
+        'character': character,
+        'items': items_character_doesnt_have
+    }
+    return render(request, 'characters/detail.html', context)
 
 def profile(request):
     # list of associated characters
     characters = Character.objects.all()
     return render(request, 'profile.html', {'characters': characters})
-
-    # list of associated items
     # user account info

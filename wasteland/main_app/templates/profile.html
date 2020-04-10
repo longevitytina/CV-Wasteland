@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<h1>User info</h1>
 <h1>Character List</h1>
 
 {% for character in characters %}
   <div class="card">
-    <a href="{#% url 'detail' character.id %}"></a>
+    <a href="{% url 'character_detail' character.id %}">
       <div class="card-content">
         <span class="card-title">{{ character.name }}</span>
         <p>Age: {{ character.age }}</p>
@@ -14,12 +15,6 @@
     </a>
   </div>
 {% endfor %}
-
-<h1>Item List</h1>
-
-
-
-
 
 
 {% endblock %}

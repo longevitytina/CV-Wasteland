@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-{% comment %} Markup for displaying associated items {% endcomment %}
+{% comment %} # Markup for displaying associated items {% endcomment %}
 {% block content %}
 <div class="row">
   <div class="col s6">
     <h3>{{ character.name }}'s Items</h3>
-    {% if character.item.count %}
+    {% if character.items.count %}
       {% for item in character.items.all %}
         <div class="card">
           <div class="card-content">

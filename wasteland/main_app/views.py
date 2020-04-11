@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Character, Item
+from .forms import ItemForm
 # Create your views here.
 
 
@@ -45,3 +46,15 @@ def profile(request):
     }
 
     return render(request, 'profile.html', context)
+
+
+def item_edit(request, item_id):
+    item = Item.objects.get(id=item_id)
+    if request.method == "POST":
+        form = ItemForm(request.POST, instance=item)
+        if form.is_valid():
+            item = form.save()
+            return redirect('items_list')
+    else:
+        form = ItemForm(instance=item)
+    return render(request, 'main_app/item_form.html', {'form': form})

@@ -18,7 +18,7 @@ def about(request):
 
 
 def character_detail(request, character_id):
-    characters = Character.objects.get(id=character_id)
+    character = Character.objects.get(id=character_id)
     items_character_doesnt_have = Item.objects.exclude(
         id__in=character.items.all().values_list('id'))
 

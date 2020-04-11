@@ -37,5 +37,11 @@ def assoc_item(request, character_id, item_id):
 def profile(request):
     # list of associated characters
     characters = Character.objects.filter(user=request.user)
-    return render(request, 'profile.html', {'characters': characters})
     # user account info
+    username = request.user
+    context = {
+        'username': username,
+        'characters': characters
+    }
+
+    return render(request, 'profile.html', context)

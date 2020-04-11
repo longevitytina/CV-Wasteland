@@ -30,6 +30,6 @@ def character_detail(request, character_id):
 
 def profile(request):
     # list of associated characters
-    characters = Character.objects.all()
+    characters = Character.objects.filter(user=request.user)
     return render(request, 'profile.html', {'characters': characters})
     # user account info

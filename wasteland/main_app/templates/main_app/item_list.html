@@ -8,6 +8,11 @@
             <span class="card-title">{{ item.name }}</span>
             <p>Description: {{ item.description }}</p>
             <p>Type: {{ item.type }}</p>
+            <div class="card-action">
+                <a href="{% url 'item_edit' item.id %}" method="post">
+                {% csrf_token %}
+                EDIT</a>
+            </div>
         </div>
     </div>
   </a>

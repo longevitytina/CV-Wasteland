@@ -22,28 +22,30 @@ ITEM_TYPES = (
     ('T', 'Trinket')
 )
 
+
 class Item(models.Model):
-    name = models.CharField(max_length = 100)
-    description = models.TextField(max_length = 100)
+    name = models.CharField(max_length=100)
+    description = models.TextField(max_length=100)
     type = models.CharField(
-        max_length = 1,
-        choices = ITEM_TYPES,
-        default = ITEM_TYPES[0][0]
+        max_length=1,
+        choices=ITEM_TYPES,
+        default=ITEM_TYPES[0][0]
     )
 
-    def __str__ (self):
+    def __str__(self):
         return self.name
 
+
 class Character(models.Model):
-    name = models.CharField(max_length = 100)
-    location = models.CharField(max_length = 100)
+    name = models.CharField(max_length=100)
+    location = models.CharField(max_length=100)
     age = models.IntegerField()
     starting_date = models.DateField('Starting Date')
 
     occupation = models.CharField(
-        max_length = 1,
-        choices = OCCUPATIONS,
-        default = OCCUPATIONS[0][0]
+        max_length=1,
+        choices=OCCUPATIONS,
+        default=OCCUPATIONS[0][0]
     )
 
     intellect = models.IntegerField()
@@ -56,14 +58,8 @@ class Character(models.Model):
     items = models.ManyToManyField(Item)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    def __str__ (self):
+    def __str__(self):
         return self.name
 
     def get_absolute_url(self):
         return reverse("index", kwargs={"pk": self.id})
-
-
-
-
-
-# Create your models here.

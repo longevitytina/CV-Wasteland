@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Character, Item, Log
-from .forms import ItemForm, CharacterForm
+from .models import Character, Item
+from .forms import ItemForm, CharacterForm, EditCharacterForm
 
 # Create your views here.
 
@@ -84,3 +84,26 @@ def character_play(request, character_id):
     }
 
     return render(request, 'characters/character_play.html', context)
+
+
+def delete_character(request, character_id):
+    Character.objects.get(id=character_id).delete()
+    return redirect('profile')
+
+
+def edit_character(request, character_id):
+    character = Character.objects.get(id=character_id)
+
+    if request.method == 'POST':
+        form = EditCharacterForm(request.POST)
+        if form.is_valid():
+            character = form.save(commit=False)
+            character.user = request.user
+            character.save()
+            return redirect('character_detail', character.id)
+    else:
+        form = EditCharacterForm()
+    context = {'form': form}
+    return render(request, 'characters/character_form.html', context)
+
+    return redirect('edit_character')

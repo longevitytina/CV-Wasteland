@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Play Wasteland</h1>
+<h1>Play Wasteland. Is the end is near?</h1>
+<div class="card">
+    <div class="card-content">
+         <span class="card-title">Day 1: {{ log.created_at }}</span>
+         <p>{{ log.reaction.situation_source}}</p>
 
-<p>The end is near</p>
+    </div>
+</div>
+
+<p></p>
 
 {% endblock %}

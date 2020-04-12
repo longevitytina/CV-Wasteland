@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Character, Item
+from .models import Character, Item, Log
 from .forms import ItemForm, CharacterForm
 
 # Create your views here.
@@ -34,6 +34,7 @@ def character_detail(request, character_id):
 def profile(request):
     # list of associated characters
     characters = Character.objects.filter(user=request.user)
+    print()
     # user account info
     username = request.user
     context = {
@@ -64,11 +65,6 @@ def new_character(request):
 
             character.user = request.user
             character.save()
-            # items = Item.objects.get(form.data.items)
-            # print('asdf')
-            # print(items)
-            # character.items.set(form.data.items)
-            # character.save()
             return redirect('character_detail', character.id)
     else:
         form = CharacterForm()
@@ -77,4 +73,14 @@ def new_character(request):
 
 
 def character_play(request, character_id):
-    return render(request, 'characters/character_play.html')
+    character = Character.objects.get(id=character_id)
+    log = character.logs.first()
+    print(log)
+    # print(character.logs.all())
+    # print(character.logs.first().reaction.situation_source)
+    context = {
+        'character': character,
+        'log': log,
+    }
+
+    return render(request, 'characters/character_play.html', context)

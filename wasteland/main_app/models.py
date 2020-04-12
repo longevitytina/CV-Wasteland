@@ -56,6 +56,7 @@ class Character(models.Model):
     strength = models.IntegerField()
 
     items = models.ManyToManyField(Item)
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -63,3 +64,41 @@ class Character(models.Model):
 
     def get_absolute_url(self):
         return reverse("index", kwargs={"pk": self.id})
+
+
+class Situation(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
+class ItemAction(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
+class Reaction(models.Model):
+    name = models.CharField(max_length=100)
+    situation_source = models.ForeignKey(
+        Situation, related_name='potential_reactions', on_delete=models.CASCADE)
+    situation_destination = models.ForeignKey(
+        Situation, related_name='previous_reaction', on_delete=models.CASCADE)
+    item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    item_action = models.ForeignKey(ItemAction, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+
+class Log(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    character = models.ForeignKey(Character, on_delete=models.CASCADE)
+    reaction = models.ForeignKey(Reaction, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name

@@ -61,8 +61,14 @@ def new_character(request):
         form = CharacterForm(request.POST)
         if form.is_valid():
             character = form.save(commit=False)
+
             character.user = request.user
             character.save()
+            # items = Item.objects.get(form.data.items)
+            # print('asdf')
+            # print(items)
+            # character.items.set(form.data.items)
+            # character.save()
             return redirect('character_detail', character.id)
     else:
         form = CharacterForm()

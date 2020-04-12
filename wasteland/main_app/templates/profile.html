@@ -22,6 +22,7 @@
         <span class="card-title">{{ character.name }}</span>
         <p>Age: {{ character.age }}</p>
         <p>Location: {{ character.location }}</p>
+        <a href="{% url 'delete_character' character.id %}">DELETE</a>
       </div>
     </a>
   </div>

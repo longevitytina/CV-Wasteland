@@ -6,14 +6,15 @@
     <div class="card">
       <div class="card-content">
         <h1>Welcome back, {{ username }}</h1>
-
+        <a href="{% url 'new_character' %}">Add a Character</a>
       </div>
     </div>
   </div>
 </div>
 
 <h3>Character List</h3>
-
+<div class="row">
+  <div class="col s6">
 {% for character in characters %}
   <div class="card character">
     <a href="{% url 'character_detail' character.id %}">
@@ -24,6 +25,8 @@
       </div>
     </a>
   </div>
+</div>
+</div>
 {% endfor %}
 
 

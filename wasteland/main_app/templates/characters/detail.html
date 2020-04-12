@@ -3,15 +3,20 @@
 {% block content %}
 <div class="row">
   <div class="col s6">
-    <h3>{{ character.name }}'s Items</h3>
+    <h1>{{ character.name }}</h1>
+    <h2>Age:{{ character.age }}</h2>
+    <h2>Location:{{ character.location }}</h2>
+
+
+    <h3>Items</h3>
     {% if character.items.count %}
       {% for item in character.items.all %}
         <div class="card">
           <div class="card-content">
             <span class="card-title">
-              {{ item.name }}
-            </span>
+              <b>{{ item.name }}</b></span>
           </div>
+              Description: {{ item.description }}
         </div>
       {% endfor %}
     {% else %}

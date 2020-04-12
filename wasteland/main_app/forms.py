@@ -15,3 +15,9 @@ class CharacterForm(forms.ModelForm):
                   'starting_date', 'occupation',
                   'intellect', 'toughness', 'speed',
                   'stamina', 'luck', 'strength')
+
+
+class EditCharacterForm(forms.ModelForm):
+    class Meta:
+        model = Character
+        fields = ('name', 'location', 'age')

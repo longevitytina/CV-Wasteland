@@ -9,6 +9,8 @@ urlpatterns = [
     path('profile/new', views.new_character, name='new_character'),
     path('profile/<int:character_id>/delete/',
          views.delete_character, name='delete_character'),
+    path('profile/<int:character_id>/edit/',
+         views.edit_character, name='edit_character'),
     path('items/', views.items_list, name='items_list'),
     path('items/<int:item_id>/edit', views.item_edit, name='item_edit'),
     path('profile/<int:character_id>/',

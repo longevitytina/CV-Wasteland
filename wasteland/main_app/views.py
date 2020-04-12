@@ -68,3 +68,8 @@ def new_character(request):
         form = CharacterForm()
     context = {'form': form}
     return render(request, 'characters/character_form.html', context)
+
+
+def delete_character(request, character_id):
+    Character.objects.get(id=character_id).delete()
+    return redirect('profile')

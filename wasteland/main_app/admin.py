@@ -8,4 +8,6 @@ admin.site.register(ItemAction)
 admin.site.register(Reaction)
 admin.site.register(Log)
 
-# Register your models here.
+# Todo
+# Customize the Reaction class for a easier to read admin panel
+# https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Admin_site

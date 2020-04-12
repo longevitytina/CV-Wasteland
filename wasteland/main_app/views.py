@@ -74,3 +74,7 @@ def new_character(request):
         form = CharacterForm()
     context = {'form': form}
     return render(request, 'characters/character_form.html', context)
+
+
+def character_play(request, character_id):
+    return render(request, 'characters/character_play.html')

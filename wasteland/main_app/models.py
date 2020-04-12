@@ -77,7 +77,6 @@ class Situation(models.Model):
 
 class ItemAction(models.Model):
     name = models.CharField(max_length=100)
-    description = models.TextField(max_length=100)
 
     def __str__(self):
         return self.name
@@ -97,9 +96,10 @@ class Reaction(models.Model):
 
 
 class Log(models.Model):
+    # name =
     created_at = models.DateTimeField(auto_now_add=True)
     character = models.ForeignKey(Character, on_delete=models.CASCADE)
     reaction = models.ForeignKey(Reaction, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.name
+    # def __str__(self):
+    #     return self

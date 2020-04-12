@@ -40,7 +40,6 @@ class Character(models.Model):
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
     age = models.IntegerField()
-    starting_date = models.DateField('Starting Date')
 
     occupation = models.CharField(
         max_length=1,
@@ -96,9 +95,10 @@ class Reaction(models.Model):
 
 
 class Log(models.Model):
-    # name =
+
     created_at = models.DateTimeField(auto_now_add=True)
-    character = models.ForeignKey(Character, on_delete=models.CASCADE)
+    character = models.ForeignKey(
+        Character, related_name='logs', on_delete=models.CASCADE)
     reaction = models.ForeignKey(Reaction, on_delete=models.CASCADE)
 
     # def __str__(self):

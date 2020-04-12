@@ -12,6 +12,6 @@ class CharacterForm(forms.ModelForm):
     class Meta:
         model = Character
         fields = ('name', 'location', 'age',
-                  'starting_date', 'occupation',
+                  'occupation',
                   'intellect', 'toughness', 'speed',
                   'stamina', 'luck', 'strength', 'items')

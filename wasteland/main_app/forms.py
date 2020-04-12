@@ -15,4 +15,3 @@ class CharacterForm(forms.ModelForm):
                   'starting_date', 'occupation',
                   'intellect', 'toughness', 'speed',
                   'stamina', 'luck', 'strength', 'items')
-        # Todo add in the rest of fields

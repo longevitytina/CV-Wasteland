@@ -23,6 +23,7 @@
         <p>Age: {{ character.age }}</p>
         <p>Location: {{ character.location }}</p>
         <a href="{% url 'delete_character' character.id %}">DELETE</a>
+        <a href="{% url 'edit_character' character.id %}">EDIT</a>
       </div>
     </a>
   </div>

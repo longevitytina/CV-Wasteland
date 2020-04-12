@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Character, Item
-from .forms import ItemForm
+from .forms import ItemForm, CharacterForm
 # Create your views here.
 
 
@@ -30,9 +30,9 @@ def character_detail(request, character_id):
     return render(request, 'characters/detail.html', context)
 
 
-def assoc_item(request, character_id, item_id):
-    Character.objects.get(id=character_id).items.add(item_id)
-    return redirect('character_detail', character_id=character_id)
+# def assoc_item(request, character_id, item_id):
+#     Character.objects.get(id=character_id).items.add(item_id)
+#     return redirect('character_detail', character_id=character_id)
 
 
 def profile(request):
@@ -58,3 +58,21 @@ def item_edit(request, item_id):
     else:
         form = ItemForm(instance=item)
     return render(request, 'main_app/item_form.html', {'form': form})
+
+
+def new_character(request):
+    if request.method == 'POST':
+        form = CharacterForm(request.POST)
+        if form.is_valid():
+            character = form.save(commit=False)
+            character.user = request.user
+            character.save()
+            return redirect('character_detail', character.id)
+    else:
+        # if a get request is made to this view function,
+        # create new, empty instance of the CatForm
+        form = CharacterForm()
+    # create a context dictionary
+    context = {'form': form}
+    # pass the form (through context) to the cat_form template
+    return render(request, 'characters/character_form.html', context)

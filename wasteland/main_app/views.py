@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Character, Item, Reaction, Log
 from .forms import ItemForm, CharacterForm, EditCharacterForm, ReactionForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
@@ -17,6 +20,7 @@ def about(request):
     return render(request, 'about.html')
 
 
+@login_required
 def character_detail(request, character_id):
     character = Character.objects.get(id=character_id)
     items_character_doesnt_have = Item.objects.exclude(
@@ -29,6 +33,7 @@ def character_detail(request, character_id):
     return render(request, 'characters/detail.html', context)
 
 
+@login_required
 def profile(request):
     # list of associated characters
     characters = Character.objects.filter(user=request.user)
@@ -43,6 +48,7 @@ def profile(request):
     return render(request, 'profile.html', context)
 
 
+@login_required
 def item_edit(request, item_id):
     item = Item.objects.get(id=item_id)
     if request.method == "POST":
@@ -55,6 +61,7 @@ def item_edit(request, item_id):
     return render(request, 'main_app/item_form.html', {'form': form})
 
 
+@login_required
 def new_character(request):
     if request.method == 'POST':
         form = CharacterForm(request.POST)
@@ -70,6 +77,7 @@ def new_character(request):
     return render(request, 'characters/character_form.html', context)
 
 
+@login_required
 def character_play(request, character_id):
     form = ReactionForm(request.POST)
     character = Character.objects.get(id=character_id)
@@ -95,16 +103,18 @@ def character_play(request, character_id):
     return render(request, 'characters/character_play.html', context)
 
 
+@login_required
 def delete_character(request, character_id):
     Character.objects.get(id=character_id).delete()
     return redirect('profile')
 
 
+@login_required
 def edit_character(request, character_id):
     character = Character.objects.get(id=character_id)
 
     if request.method == 'POST':
-        form = EditCharacterForm(request.POST, instance = character)
+        form = EditCharacterForm(request.POST, instance=character)
         if form.is_valid():
             character = form.save(commit=False)
             character.user = request.user
@@ -116,3 +126,23 @@ def edit_character(request, character_id):
         return render(request, 'characters/character_form.html', context)
 
     return redirect('edit_character')
+
+
+def signup(request):
+    error_message = ''
+    if request.method == 'POST':
+        # This is how to create a 'user' form object
+        # that includes the data from the browser
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            # This will add the user to the database
+            user = form.save()
+            # This is how we log a user in via code
+            login(request, user)
+            return redirect('home')
+        else:
+            error_message = 'Invalid sign up - try again'
+    # A bad POST or a GET request, so render signup.html with an empty form
+    form = UserCreationForm()
+    context = {'form': form, 'error_message': error_message}
+    return render(request, 'registration/signup.html', context)

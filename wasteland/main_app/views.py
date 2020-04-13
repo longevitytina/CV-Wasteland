@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Character, Item
+from .models import Character, Item, Reaction, Log
 from .forms import ItemForm, CharacterForm, EditCharacterForm
 
 # Create your views here.
@@ -34,6 +34,7 @@ def character_detail(request, character_id):
 def profile(request):
     # list of associated characters
     characters = Character.objects.filter(user=request.user)
+    print()
     # user account info
     username = request.user
     context = {
@@ -61,6 +62,7 @@ def new_character(request):
         form = CharacterForm(request.POST)
         if form.is_valid():
             character = form.save(commit=False)
+
             character.user = request.user
             character.save()
             return redirect('character_detail', character.id)
@@ -68,6 +70,24 @@ def new_character(request):
         form = CharacterForm()
     context = {'form': form}
     return render(request, 'characters/character_form.html', context)
+
+
+def character_play(request, character_id):
+    if request.method == 'POST':
+        reaction_id = request.POST['reaction_id']
+        Log.objects.create(character_id=character_id, reaction_id=reaction_id)
+
+    character = Character.objects.get(id=character_id)
+    logs = character.logs.all()
+    current_situation = logs.first().reaction.situation_destination
+    reactions = Reaction.objects.filter(id=current_situation.id)
+    context = {
+        'character': character,
+        'logs': logs,
+        'reactions': reactions,
+        'current_situation': current_situation
+    }
+    return render(request, 'characters/character_play.html', context)
 
 
 def delete_character(request, character_id):

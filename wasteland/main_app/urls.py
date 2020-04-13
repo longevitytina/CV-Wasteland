@@ -15,6 +15,8 @@ urlpatterns = [
     path('items/<int:item_id>/edit', views.item_edit, name='item_edit'),
     path('profile/<int:character_id>/',
          views.character_detail, name='character_detail'),
+    path('profile/<int:character_id>/play',
+         views.character_play, name='character_play'),
     path('accounts/', include('django.contrib.auth.urls'))
 
 ]

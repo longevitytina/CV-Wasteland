@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Character, Item
+from .models import Character, Item, Reaction, Log
 from .forms import ItemForm, CharacterForm, EditCharacterForm
 
 # Create your views here.
@@ -73,16 +73,20 @@ def new_character(request):
 
 
 def character_play(request, character_id):
+    if request.method == 'POST':
+        reaction_id = request.POST['reaction_id']
+        Log.objects.create(character_id=character_id, reaction_id=reaction_id)
+
     character = Character.objects.get(id=character_id)
-    log = character.logs.first()
-    print(log)
-    # print(character.logs.all())
-    # print(character.logs.first().reaction.situation_source)
+    logs = character.logs.all()
+    current_situation = logs.first().reaction.situation_destination
+    reactions = Reaction.objects.filter(id=current_situation.id)
     context = {
         'character': character,
-        'log': log,
+        'logs': logs,
+        'reactions': reactions,
+        'current_situation': current_situation
     }
-
     return render(request, 'characters/character_play.html', context)
 
 

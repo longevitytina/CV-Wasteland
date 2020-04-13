@@ -112,5 +112,5 @@ class Log(models.Model):
         Character, related_name='logs', on_delete=models.CASCADE)
     reaction = models.ForeignKey(Reaction, on_delete=models.CASCADE)
 
-    # def __str__(self):
-    #     return self
+# class Login(models.Model):
+#     name =

@@ -17,6 +17,7 @@ urlpatterns = [
          views.character_detail, name='character_detail'),
     path('profile/<int:character_id>/play',
          views.character_play, name='character_play'),
-    path('accounts/', include('django.contrib.auth.urls'))
-
+    path('accounts/', include('django.contrib.auth.urls')),
+    #     path('accounts/login/', 'django.contrib.auth.views.login', name='login'),
+    #     path('accounts/logout/', 'django.contrib.auth.views.logout', name='logout')
 ]

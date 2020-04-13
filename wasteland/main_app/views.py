@@ -104,7 +104,7 @@ def edit_character(request, character_id):
     character = Character.objects.get(id=character_id)
 
     if request.method == 'POST':
-        form = EditCharacterForm(request.POST, instance = character)
+        form = EditCharacterForm(request.POST, instance=character)
         if form.is_valid():
             character = form.save(commit=False)
             character.user = request.user
@@ -116,3 +116,15 @@ def edit_character(request, character_id):
         return render(request, 'characters/character_form.html', context)
 
     return redirect('edit_character')
+
+
+# def login_view(request):
+#     if request.method == 'POST':
+#         form = AuthenticationForm(data=request.POST)
+#         if form.is_valid():
+#             user = form.get_user()
+#             login(request, user)
+#             return redirect('/website/profile/')
+#     else:
+#         form = AuthenticationForm()
+#     return render(request, 'website/login.html', {'form': form})

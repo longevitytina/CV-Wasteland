@@ -20,10 +20,14 @@ class CharacterForm(forms.ModelForm):
 class EditCharacterForm(forms.ModelForm):
     class Meta:
         model = Character
-        fields = ('name', 'location', 'age', 'intellect', 'toughness', 'speed', 'stamina', 'luck', 'strength')
+        fields = ('name', 'location', 'age', 'intellect',
+                  'toughness', 'speed', 'stamina', 'luck', 'strength')
 
 
 class ReactionForm(forms.ModelForm):
     class Meta:
         model = Reaction
         fields = ('name',)
+
+
+# class AuthenticationForm(forms)

@@ -22,6 +22,13 @@ ITEM_TYPES = (
     ('T', 'Trinket')
 )
 
+RESPONSE = (
+    ('Run', 'Run'),
+    ('Explore', 'Explore'),
+    ('Fight', 'Fight'),
+    ('Rest', 'Rest')
+)
+
 
 class Item(models.Model):
     name = models.CharField(max_length=100)
@@ -68,7 +75,11 @@ class Character(models.Model):
 class Situation(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=100)
-    # response = models.
+    response = models.CharField(
+        max_length=20,
+        choices=RESPONSE,
+        default=RESPONSE[0][0]
+    )
 
     def __str__(self):
         return self.name

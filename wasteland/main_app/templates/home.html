@@ -9,27 +9,50 @@
 {% block content %}
 
 <div class="row mt-4">
-    <div class="home-column col-3">
-        <div class="home-column-title">
-            Description
-        </div>
-        <div class="home-column-info">
-            Game Instructions
-        </div>
-    </div>
-    <div class="home-column col-6">
-        <div class="home-column-title">
-            Instructions
-        </div>
-        <div class="home-column-info">
-            Game description
+    <div class="col-3">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Description</h2>
+                <div class="card-text">
+                    This game was created to simulate survivors in a zombie wasteland. As the days pass, your survivor will
+                    collect items, encounter zombies, and endure random events. Keep playing to see how long your survivor 
+                    can make it in the wasteland.
+                </div>
+            </div>
         </div>
     </div>
-    <div class="home-column col-3">
-        <div class="home-column-title">
-            Sign In / Create Account
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Instructions</h2>
+                <div class="card-text">
+                    Login, create character, simulate
+                </div>
+            </div>
         </div>
-
+    </div>
+    <div class="col-3">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Log In</h2>
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control">
+                    </div>
+        
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <input type="hidden" name="next" value="{{ next }}">
+                </form>
+            </div>
+        </div>
+    </div>
         <!-- <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
             {{ form.as_p }}
@@ -38,7 +61,7 @@
         </form> -->
 
 
-
+<!-- 
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
             {{ form.as_p }}
@@ -53,8 +76,8 @@
 
             <button type="submit" class="btn btn-primary">Submit</button>
             <input type="hidden" name="next" value="{{ next }}">
-        </form>
-    </div>
+        </form> -->
+    
 </div>
 
 

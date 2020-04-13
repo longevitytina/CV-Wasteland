@@ -5,13 +5,10 @@
 {% for log in logs  %}
 <div class="card">
     <div class="card-content">
-        {{ log.reaction.situation_destination.id }}
          <span class="card-title"><b>Day:</b> {{ log.created_at }}</span>
          <p>{{ log.reaction.situation_source}}: {{ log.reaction.situation_source.description}}</p>
          <p>{{ log.reaction}}</p>
          <p>{{ log.reaction.situation_destination}}: {{ log.reaction.situation_destination.description}}</p>
-
-        </form>
     </div>
 </div>
 {% endfor %}

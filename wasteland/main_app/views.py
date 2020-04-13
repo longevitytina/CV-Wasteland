@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Character, Item, Reaction, Log
-from .forms import ItemForm, CharacterForm, EditCharacterForm
+from .forms import ItemForm, CharacterForm, EditCharacterForm, ReactionForm
 
 # Create your views here.
 
@@ -73,20 +73,39 @@ def new_character(request):
 
 
 def character_play(request, character_id):
-    if request.method == 'POST':
-        reaction_id = request.POST['reaction_id']
-        Log.objects.create(character_id=character_id, reaction_id=reaction_id)
+    form = ReactionForm(request.POST)
+
+    # if request.method == 'POST':
+    #     reaction_id = request.POST['reaction_id']
+    #     Log.objects.create(character_id=character_id, reaction_id=reaction_id)
 
     character = Character.objects.get(id=character_id)
     logs = character.logs.all()
-    current_situation = logs.first().reaction.situation_destination
+    current_situation = logs.last().reaction.situation_destination
     reactions = Reaction.objects.filter(id=current_situation.id)
+
+    if request.method == 'POST':
+        if form.is_valid():
+            new_reaction = form.save(commit=False)
+            # new_reaction.character_id = character_id
+            # set situation source = current sitation id
+            # new_reaction.situation_source = current_situation
+            # use the reaction situation source id to destermine the situation destination
+            # new_reaction.situation_source =
+            # new_reaction.save()
+            Log.objects.create(character_id=character_id,
+                               reaction_id=new_reaction.id)
+
+        return redirect('character_play', character_id)
+
     context = {
         'character': character,
         'logs': logs,
         'reactions': reactions,
-        'current_situation': current_situation
+        'current_situation': current_situation,
+        'form': form
     }
+
     return render(request, 'characters/character_play.html', context)
 
 

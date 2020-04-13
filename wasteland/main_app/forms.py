@@ -1,5 +1,5 @@
 from django import forms
-from .models import Item, Character, Situation
+from .models import Item, Character, Situation, Reaction
 
 
 class ItemForm(forms.ModelForm):
@@ -23,7 +23,7 @@ class EditCharacterForm(forms.ModelForm):
         fields = ('name', 'location', 'age')
 
 
-# class ResponseForm(forms.ModelForm):
-#     class Meta:
-#         model = Situation
-#         fields = ('response',)
+class ReactionForm(forms.ModelForm):
+    class Meta:
+        model = Reaction
+        fields = ('name',)

@@ -75,11 +75,6 @@ class Character(models.Model):
 class Situation(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=100)
-    response = models.CharField(
-        max_length=20,
-        choices=RESPONSE,
-        default=RESPONSE[0][0]
-    )
 
     def __str__(self):
         return self.name
@@ -93,13 +88,18 @@ class ItemAction(models.Model):
 
 
 class Reaction(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(
+        max_length=20,
+        choices=RESPONSE,
+        default=RESPONSE[0][0]
+    )
+
     situation_source = models.ForeignKey(
         Situation, related_name='potential_reactions', on_delete=models.CASCADE)
     situation_destination = models.ForeignKey(
         Situation, related_name='previous_reaction', on_delete=models.CASCADE)
-    item = models.ForeignKey(Item, on_delete=models.CASCADE)
-    item_action = models.ForeignKey(ItemAction, on_delete=models.CASCADE)
+    # item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    # item_action = models.ForeignKey(ItemAction, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

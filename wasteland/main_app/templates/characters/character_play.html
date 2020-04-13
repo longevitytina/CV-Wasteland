@@ -5,17 +5,20 @@
 {% for log in logs  %}
 <div class="card">
     <div class="card-content">
+        {{ log.reaction.situation_destination.id }}
          <span class="card-title"><b>Day:</b> {{ log.created_at }}</span>
          <p>{{ log.reaction.situation_source}}: {{ log.reaction.situation_source.description}}</p>
          <p>{{ log.reaction}}</p>
          <p>{{ log.reaction.situation_destination}}: {{ log.reaction.situation_destination.description}}</p>
 
-
-         {% comment %} <form action="{% url 'add_feeding' cat.id %}" method="POST">{% endcomment %}
-
-
+        </form>
     </div>
 </div>
 {% endfor %}
+         <form action="{% url 'character_play' character.id %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">submit</button>
+        </form>
 
 {% endblock %}

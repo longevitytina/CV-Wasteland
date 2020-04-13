@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Character, Item, Reaction, Log
 from .forms import ItemForm, CharacterForm, EditCharacterForm, ReactionForm
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 
 
@@ -138,7 +139,7 @@ def signup(request):
             user = form.save()
             # This is how we log a user in via code
             login(request, user)
-            return redirect('index')
+            return redirect('home')
         else:
             error_message = 'Invalid sign up - try again'
     # A bad POST or a GET request, so render signup.html with an empty form

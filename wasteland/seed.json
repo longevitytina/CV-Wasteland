@@ -1,623 +1,2654 @@
-[
-    {
-        "model" : "main_app.Item",
-        "pk" : 1,
-        "fields": {
-            "name" : "Chair",
-            "description" : "Handy chair",
-            "type": "W"
-        }
-    },
-    {
-        "model" : "main_app.Item",
-        "pk" : 2,
-        "fields": {
-            "name" : "Baseball Bat",
-            "description" : "Homerun",
-            "type": "W"
-        }
-    },
-    {
-        "model" : "main_app.Item",
-        "pk" : 3,
-        "fields": {
-            "name" : "Apple",
-            "description" : "One a day",
-            "type": "F"
-        }
-    },
-    {
-        "model" : "main_app.Item",
-        "pk" : 4,
-        "fields": {
-            "name" : "Running Shoes",
-            "description" : "Speedy",
-            "type": "S"
-        }
-    },
-    {
-        "model" : "main_app.Item",
-        "pk" : 5,
-        "fields": {
-            "name" : "The Dictionary",
-            "description" : "Lots of words",
-            "type": "B"
-        }
-    },
-    {
-        "model": "main_app.item",
-        "pk": 1,
-        "fields": {
-            "name": "Knife",
-            "description": "Pointy thing",
-            "type": "W"
-        }
-    }, {
-        "model": "contenttypes.contenttype",
-        "pk": 1,
-        "fields": {
-            "app_label": "main_app",
-            "model": "item"
-        }
-    }, {
-        "model": "contenttypes.contenttype",
-        "pk": 2,
-        "fields": {
-            "app_label": "main_app",
-            "model": "character"
-        }
-    }, {
-        "model": "contenttypes.contenttype",
-        "pk": 3,
-        "fields": {
-            "app_label": "admin",
-            "model": "logentry"
-        }
-    }, {
-        "model": "contenttypes.contenttype",
-        "pk": 4,
-        "fields": {
-            "app_label": "auth",
-            "model": "permission"
-        }
-    }, {
-        "model": "contenttypes.contenttype",
-        "pk": 5,
-        "fields": {
-            "app_label": "auth",
-            "model": "group"
-        }
-    }, {
-        "model": "contenttypes.contenttype",
-        "pk": 6,
-        "fields": {
-            "app_label": "auth",
-            "model": "user"
-        }
-    }, {
-        "model": "contenttypes.contenttype",
-        "pk": 7,
-        "fields": {
-            "app_label": "contenttypes",
-            "model": "contenttype"
-        }
-    }, {
-        "model": "contenttypes.contenttype",
-        "pk": 8,
-        "fields": {
-            "app_label": "sessions",
-            "model": "session"
-        }
-    }, {
-        "model": "contenttypes.contenttype",
-        "pk": 9,
-        "fields": {
-            "app_label": "main_app",
-            "model": "itemaction"
-        }
-    }, {
-        "model": "contenttypes.contenttype",
-        "pk": 10,
-        "fields": {
-            "app_label": "main_app",
-            "model": "situation"
-        }
-    }, {
-        "model": "contenttypes.contenttype",
-        "pk": 11,
-        "fields": {
-            "app_label": "main_app",
-            "model": "reaction"
-        }
-    }, {
-        "model": "contenttypes.contenttype",
-        "pk": 12,
-        "fields": {
-            "app_label": "main_app",
-            "model": "log"
-        }
-    }, {
-        "model": "sessions.session",
-        "pk": "bgbp8b78ncctc4d7jw0f6zpr9t3j5gpy",
-        "fields": {
-            "session_data": "N2M0YmM0NzQ1NjAyMjRmNzBlNjZjODAyYTAzMDk4MGI2NjY1MzJmOTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJhZTFkYjJjZDY3Yjk5MzYyNjIxOTFhYjc4OGEzYmZmOTY3NjZlNDBmIn0=",
-            "expire_date": "2020-04-27T18:46:44.928Z"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 1,
-        "fields": {
-            "name": "Can add item",
-            "content_type": 1,
-            "codename": "add_item"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 2,
-        "fields": {
-            "name": "Can change item",
-            "content_type": 1,
-            "codename": "change_item"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 3,
-        "fields": {
-            "name": "Can delete item",
-            "content_type": 1,
-            "codename": "delete_item"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 4,
-        "fields": {
-            "name": "Can view item",
-            "content_type": 1,
-            "codename": "view_item"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 5,
-        "fields": {
-            "name": "Can add character",
-            "content_type": 2,
-            "codename": "add_character"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 6,
-        "fields": {
-            "name": "Can change character",
-            "content_type": 2,
-            "codename": "change_character"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 7,
-        "fields": {
-            "name": "Can delete character",
-            "content_type": 2,
-            "codename": "delete_character"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 8,
-        "fields": {
-            "name": "Can view character",
-            "content_type": 2,
-            "codename": "view_character"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 9,
-        "fields": {
-            "name": "Can add log entry",
-            "content_type": 3,
-            "codename": "add_logentry"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 10,
-        "fields": {
-            "name": "Can change log entry",
-            "content_type": 3,
-            "codename": "change_logentry"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 11,
-        "fields": {
-            "name": "Can delete log entry",
-            "content_type": 3,
-            "codename": "delete_logentry"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 12,
-        "fields": {
-            "name": "Can view log entry",
-            "content_type": 3,
-            "codename": "view_logentry"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 13,
-        "fields": {
-            "name": "Can add permission",
-            "content_type": 4,
-            "codename": "add_permission"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 14,
-        "fields": {
-            "name": "Can change permission",
-            "content_type": 4,
-            "codename": "change_permission"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 15,
-        "fields": {
-            "name": "Can delete permission",
-            "content_type": 4,
-            "codename": "delete_permission"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 16,
-        "fields": {
-            "name": "Can view permission",
-            "content_type": 4,
-            "codename": "view_permission"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 17,
-        "fields": {
-            "name": "Can add group",
-            "content_type": 5,
-            "codename": "add_group"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 18,
-        "fields": {
-            "name": "Can change group",
-            "content_type": 5,
-            "codename": "change_group"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 19,
-        "fields": {
-            "name": "Can delete group",
-            "content_type": 5,
-            "codename": "delete_group"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 20,
-        "fields": {
-            "name": "Can view group",
-            "content_type": 5,
-            "codename": "view_group"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 21,
-        "fields": {
-            "name": "Can add user",
-            "content_type": 6,
-            "codename": "add_user"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 22,
-        "fields": {
-            "name": "Can change user",
-            "content_type": 6,
-            "codename": "change_user"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 23,
-        "fields": {
-            "name": "Can delete user",
-            "content_type": 6,
-            "codename": "delete_user"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 24,
-        "fields": {
-            "name": "Can view user",
-            "content_type": 6,
-            "codename": "view_user"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 25,
-        "fields": {
-            "name": "Can add content type",
-            "content_type": 7,
-            "codename": "add_contenttype"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 26,
-        "fields": {
-            "name": "Can change content type",
-            "content_type": 7,
-            "codename": "change_contenttype"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 27,
-        "fields": {
-            "name": "Can delete content type",
-            "content_type": 7,
-            "codename": "delete_contenttype"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 28,
-        "fields": {
-            "name": "Can view content type",
-            "content_type": 7,
-            "codename": "view_contenttype"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 29,
-        "fields": {
-            "name": "Can add session",
-            "content_type": 8,
-            "codename": "add_session"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 30,
-        "fields": {
-            "name": "Can change session",
-            "content_type": 8,
-            "codename": "change_session"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 31,
-        "fields": {
-            "name": "Can delete session",
-            "content_type": 8,
-            "codename": "delete_session"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 32,
-        "fields": {
-            "name": "Can view session",
-            "content_type": 8,
-            "codename": "view_session"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 33,
-        "fields": {
-            "name": "Can add item action",
-            "content_type": 9,
-            "codename": "add_itemaction"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 34,
-        "fields": {
-            "name": "Can change item action",
-            "content_type": 9,
-            "codename": "change_itemaction"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 35,
-        "fields": {
-            "name": "Can delete item action",
-            "content_type": 9,
-            "codename": "delete_itemaction"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 36,
-        "fields": {
-            "name": "Can view item action",
-            "content_type": 9,
-            "codename": "view_itemaction"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 37,
-        "fields": {
-            "name": "Can add situation",
-            "content_type": 10,
-            "codename": "add_situation"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 38,
-        "fields": {
-            "name": "Can change situation",
-            "content_type": 10,
-            "codename": "change_situation"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 39,
-        "fields": {
-            "name": "Can delete situation",
-            "content_type": 10,
-            "codename": "delete_situation"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 40,
-        "fields": {
-            "name": "Can view situation",
-            "content_type": 10,
-            "codename": "view_situation"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 41,
-        "fields": {
-            "name": "Can add reaction",
-            "content_type": 11,
-            "codename": "add_reaction"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 42,
-        "fields": {
-            "name": "Can change reaction",
-            "content_type": 11,
-            "codename": "change_reaction"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 43,
-        "fields": {
-            "name": "Can delete reaction",
-            "content_type": 11,
-            "codename": "delete_reaction"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 44,
-        "fields": {
-            "name": "Can view reaction",
-            "content_type": 11,
-            "codename": "view_reaction"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 45,
-        "fields": {
-            "name": "Can add log",
-            "content_type": 12,
-            "codename": "add_log"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 46,
-        "fields": {
-            "name": "Can change log",
-            "content_type": 12,
-            "codename": "change_log"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 47,
-        "fields": {
-            "name": "Can delete log",
-            "content_type": 12,
-            "codename": "delete_log"
-        }
-    }, {
-        "model": "auth.permission",
-        "pk": 48,
-        "fields": {
-            "name": "Can view log",
-            "content_type": 12,
-            "codename": "view_log"
-        }
-    }, {
-        "model": "auth.user",
-        "pk": 1,
-        "fields": {
-            "password": "pbkdf2_sha256$180000$8HKG2HvMAmwd$aUQLik4gH87dUGN37i1PCTWZQWR97nYnIfX0B+HAIis=",
-            "last_login": "2020-04-13T18:46:44.926Z",
-            "is_superuser": true,
-            "username": "jaker",
-            "first_name": "",
-            "last_name": "",
-            "email": "jakekjohnson@outlook.com",
-            "is_staff": true,
-            "is_active": true,
-            "date_joined": "2020-04-10T17:21:53.704Z",
-            "groups": [],
-            "user_permissions": []
-        }
-    }, {
-        "model": "admin.logentry",
-        "pk": 1,
-        "fields": {
-            "action_time": "2020-04-10T17:23:28.354Z",
-            "user": 1,
-            "content_type": 1,
-            "object_id": "1",
-            "object_repr": "Knife",
-            "action_flag": 1,
-            "change_message": "[{\"added\": {}}]"
-        }
-    }, {
-        "model": "admin.logentry",
-        "pk": 2,
-        "fields": {
-            "action_time": "2020-04-10T17:23:35.685Z",
-            "user": 1,
-            "content_type": 2,
-            "object_id": "1",
-            "object_repr": "Jake",
-            "action_flag": 1,
-            "change_message": "[{\"added\": {}}]"
-        }
-    }, {
-        "model": "main_app.character",
-        "pk": 4,
-        "fields": {
-            "name": "Jake",
-            "location": "San Diego",
-            "age": 21,
-            "occupation": "D",
-            "intellect": 5,
-            "toughness": 5,
-            "speed": 5,
-            "stamina": 5,
-            "luck": 5,
-            "strength": 5,
-            "user": 1,
-            "items": []
-        }
-    }, {
-        "model": "main_app.character",
-        "pk": 6,
-        "fields": {
-            "name": "Bob",
-            "location": "Vegas",
-            "age": 82,
-            "occupation": "N",
-            "intellect": 6,
-            "toughness": 2,
-            "speed": 9,
-            "stamina": 1,
-            "luck": 5,
-            "strength": 3,
-            "user": 1,
-            "items": []
-        }
-    }, {
-        "model": "main_app.character",
-        "pk": 9,
-        "fields": {
-            "name": "Tim",
-            "location": "Florida",
-            "age": 13,
-            "occupation": "U",
-            "intellect": 3,
-            "toughness": 3,
-            "speed": 3,
-            "stamina": 3,
-            "luck": 3,
-            "strength": 3,
-            "user": 1,
-            "items": []
-        }
+[{
+    "model": "main_app.item",
+    "pk": 1,
+    "fields": {
+        "name": "leaf blower",
+        "description": "powerful air flow",
+        "type": "W"
     }
-]
+}, {
+    "model": "main_app.item",
+    "pk": 2,
+    "fields": {
+        "name": "arrow",
+        "description": "sdfsdfsdf",
+        "type": "W"
+    }
+}, {
+    "model": "main_app.item",
+    "pk": 3,
+    "fields": {
+        "name": "old boots",
+        "description": "asfsdfzsdf",
+        "type": "S"
+    }
+}, {
+    "model": "main_app.item",
+    "pk": 4,
+    "fields": {
+        "name": "gloves",
+        "description": "dsfsdf",
+        "type": "C"
+    }
+}, {
+    "model": "main_app.item",
+    "pk": 5,
+    "fields": {
+        "name": "gun",
+        "description": "pow",
+        "type": "W"
+    }
+}, {
+    "model": "main_app.item",
+    "pk": 6,
+    "fields": {
+        "name": "Pillow",
+        "description": "Increase ability to sleep, even with the scary noises outside",
+        "type": "T"
+    }
+}, {
+    "model": "main_app.item",
+    "pk": 7,
+    "fields": {
+        "name": "Refried Beans",
+        "description": "Jackpot. Canned beans, this delicious treasure is a perfect energy source. Today is a good day.",
+        "type": "F"
+    }
+},  {
+    "model": "main_app.situation",
+    "pk": 2,
+    "fields": {
+        "name": "Zombies Attack",
+        "description": "Oh the horror! They're everywhere! What next?"
+    }
+}, {
+    "model": "main_app.situation",
+    "pk": 3,
+    "fields": {
+        "name": "Get some rest",
+        "description": "Sleep tight, you earned it. Rest up next?"
+    }
+}, {
+    "model": "main_app.situation",
+    "pk": 4,
+    "fields": {
+        "name": "Hungry",
+        "description": "There might be some food in that abandoned store. What next?"
+    }
+}, {
+    "model": "main_app.situation",
+    "pk": 5,
+    "fields": {
+        "name": "Injured",
+        "description": "Ouch! Bitten by a Zom, will this be the end? What next?"
+    }
+}, {
+    "model": "main_app.situation",
+    "pk": 6,
+    "fields": {
+        "name": "Weakly exploring",
+        "description": "Injured from a Zom bite, too scared find shelter. This could be the end very soon. What next?"
+    }
+}, {
+    "model": "main_app.itemaction",
+    "pk": 2,
+    "fields": {
+        "name": "add"
+    }
+}, {
+    "model": "main_app.itemaction",
+    "pk": 3,
+    "fields": {
+        "name": "drop"
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 25,
+    "fields": {
+        "name": "Explore",
+        "situation_source": 1,
+        "situation_destination": 2
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 31,
+    "fields": {
+        "name": "Rest",
+        "situation_source": 1,
+        "situation_destination": 2
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 32,
+    "fields": {
+        "name": "Fight",
+        "situation_source": 1,
+        "situation_destination": 2
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 33,
+    "fields": {
+        "name": "Run",
+        "situation_source": 1,
+        "situation_destination": 2
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 34,
+    "fields": {
+        "name": "Run",
+        "situation_source": 2,
+        "situation_destination": 4
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 35,
+    "fields": {
+        "name": "Explore",
+        "situation_source": 2,
+        "situation_destination": 5
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 36,
+    "fields": {
+        "name": "Fight",
+        "situation_source": 2,
+        "situation_destination": 5
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 37,
+    "fields": {
+        "name": "Rest",
+        "situation_source": 2,
+        "situation_destination": 5
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 38,
+    "fields": {
+        "name": "Rest",
+        "situation_source": 5,
+        "situation_destination": 3
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 39,
+    "fields": {
+        "name": "Fight",
+        "situation_source": 5,
+        "situation_destination": 5
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 40,
+    "fields": {
+        "name": "Explore",
+        "situation_source": 5,
+        "situation_destination": 6
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 41,
+    "fields": {
+        "name": "Run",
+        "situation_source": 5,
+        "situation_destination": 6
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 42,
+    "fields": {
+        "name": "Run",
+        "situation_source": 6,
+        "situation_destination": 6
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 43,
+    "fields": {
+        "name": "Explore",
+        "situation_source": 6,
+        "situation_destination": 6
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 44,
+    "fields": {
+        "name": "Fight",
+        "situation_source": 6,
+        "situation_destination": 5
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 45,
+    "fields": {
+        "name": "Rest",
+        "situation_source": 6,
+        "situation_destination": 3
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 46,
+    "fields": {
+        "name": "Rest",
+        "situation_source": 3,
+        "situation_destination": 4
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 47,
+    "fields": {
+        "name": "Run",
+        "situation_source": 3,
+        "situation_destination": 6
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 48,
+    "fields": {
+        "name": "Fight",
+        "situation_source": 3,
+        "situation_destination": 2
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 49,
+    "fields": {
+        "name": "Explore",
+        "situation_source": 3,
+        "situation_destination": 6
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 50,
+    "fields": {
+        "name": "Run",
+        "situation_source": 6,
+        "situation_destination": 5
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 51,
+    "fields": {
+        "name": "Rest",
+        "situation_source": 6,
+        "situation_destination": 3
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 52,
+    "fields": {
+        "name": "Fight",
+        "situation_source": 6,
+        "situation_destination": 5
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 53,
+    "fields": {
+        "name": "Explore",
+        "situation_source": 6,
+        "situation_destination": 6
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 54,
+    "fields": {
+        "name": "Run",
+        "situation_source": 4,
+        "situation_destination": 5
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 55,
+    "fields": {
+        "name": "Explore",
+        "situation_source": 4,
+        "situation_destination": 6
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 56,
+    "fields": {
+        "name": "Rest",
+        "situation_source": 4,
+        "situation_destination": 3
+    }
+}, {
+    "model": "main_app.reaction",
+    "pk": 57,
+    "fields": {
+        "name": "Fight",
+        "situation_source": 4,
+        "situation_destination": 2
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "main_app",
+        "model": "item"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "main_app",
+        "model": "character"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "main_app",
+        "model": "log"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "main_app",
+        "model": "situation"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "main_app",
+        "model": "itemaction"
+    }
+}, {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "main_app",
+        "model": "reaction"
+    }
+}, {
+    "model": "sessions.session",
+    "pk": "dgpt6ldpzy7iddbfgywi99eglqrr8yp1",
+    "fields": {
+        "session_data": "MjRiNTFiZGI0MzNlMzdhMDFhZTFiZjZmMDQ4MmM4YTE4ODc4YjdkMjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlZmFiMjg0YjM3YTgwYzM4OGUzYzNhYTA5Y2QwMDA2NGQzMDgzNDJlIn0=",
+        "expire_date": "2020-04-26T23:55:23.292Z"
+    }
+}, {
+    "model": "sessions.session",
+    "pk": "g2drjycterjbvlx5pex0s23uz9plk9al",
+    "fields": {
+        "session_data": "MjRiNTFiZGI0MzNlMzdhMDFhZTFiZjZmMDQ4MmM4YTE4ODc4YjdkMjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlZmFiMjg0YjM3YTgwYzM4OGUzYzNhYTA5Y2QwMDA2NGQzMDgzNDJlIn0=",
+        "expire_date": "2020-04-27T16:32:13.961Z"
+    }
+}, {
+    "model": "sessions.session",
+    "pk": "kr34c4xfx8iuqg0i3siub0jz42chgtxt",
+    "fields": {
+        "session_data": "MjRiNTFiZGI0MzNlMzdhMDFhZTFiZjZmMDQ4MmM4YTE4ODc4YjdkMjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlZmFiMjg0YjM3YTgwYzM4OGUzYzNhYTA5Y2QwMDA2NGQzMDgzNDJlIn0=",
+        "expire_date": "2020-04-27T16:57:00.094Z"
+    }
+}, {
+    "model": "sessions.session",
+    "pk": "ttvxgtn8luofvahd15lfyz31f46i06ey",
+    "fields": {
+        "session_data": "MjRiNTFiZGI0MzNlMzdhMDFhZTFiZjZmMDQ4MmM4YTE4ODc4YjdkMjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlZmFiMjg0YjM3YTgwYzM4OGUzYzNhYTA5Y2QwMDA2NGQzMDgzNDJlIn0=",
+        "expire_date": "2020-04-25T18:21:15.032Z"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 4,
+        "codename": "view_user"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 5,
+        "codename": "view_contenttype"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 6,
+        "codename": "view_session"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add item",
+        "content_type": 7,
+        "codename": "add_item"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change item",
+        "content_type": 7,
+        "codename": "change_item"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete item",
+        "content_type": 7,
+        "codename": "delete_item"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view item",
+        "content_type": 7,
+        "codename": "view_item"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add character",
+        "content_type": 8,
+        "codename": "add_character"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change character",
+        "content_type": 8,
+        "codename": "change_character"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete character",
+        "content_type": 8,
+        "codename": "delete_character"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view character",
+        "content_type": 8,
+        "codename": "view_character"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add log",
+        "content_type": 9,
+        "codename": "add_log"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change log",
+        "content_type": 9,
+        "codename": "change_log"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete log",
+        "content_type": 9,
+        "codename": "delete_log"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view log",
+        "content_type": 9,
+        "codename": "view_log"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add situation",
+        "content_type": 10,
+        "codename": "add_situation"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change situation",
+        "content_type": 10,
+        "codename": "change_situation"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete situation",
+        "content_type": 10,
+        "codename": "delete_situation"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view situation",
+        "content_type": 10,
+        "codename": "view_situation"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add item action",
+        "content_type": 11,
+        "codename": "add_itemaction"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change item action",
+        "content_type": 11,
+        "codename": "change_itemaction"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete item action",
+        "content_type": 11,
+        "codename": "delete_itemaction"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view item action",
+        "content_type": 11,
+        "codename": "view_itemaction"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add reaction",
+        "content_type": 12,
+        "codename": "add_reaction"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change reaction",
+        "content_type": 12,
+        "codename": "change_reaction"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete reaction",
+        "content_type": 12,
+        "codename": "delete_reaction"
+    }
+}, {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view reaction",
+        "content_type": 12,
+        "codename": "view_reaction"
+    }
+}, {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$180000$AfYMm05vGVJq$T8SRoj3ZZ6+KoHWrNuZImyTb+ezRh4FzS7Axlb4LOIw=",
+        "last_login": "2020-04-13T16:57:00.092Z",
+        "is_superuser": true,
+        "username": "tina",
+        "first_name": "",
+        "last_name": "",
+        "email": "longevity.tina@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2020-04-10T18:21:34.095Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$180000$WuEcSuNWZBS0$326HsjQpdwXacDJJIo+d+aYUMPchrHIuOf5aD+2bg28=",
+        "last_login": "2020-04-11T16:57:44.039Z",
+        "is_superuser": false,
+        "username": "bob",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2020-04-10T23:12:58Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2020-04-10T21:32:22.145Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "bat",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2020-04-10T21:32:27.252Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "ti",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2020-04-10T23:10:22.536Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "arrow",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2020-04-10T23:10:39.486Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "old boots",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2020-04-10T23:10:51.557Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "gloves",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2020-04-10T23:12:10.921Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "bb",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2020-04-10T23:12:58.730Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "2",
+        "object_repr": "bob",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2020-04-10T23:13:18.433Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "2",
+        "object_repr": "bob",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2020-04-11T16:57:12.203Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "destroyer",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2020-04-11T18:22:13.307Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "5",
+        "object_repr": "gun",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2020-04-12T00:06:23.438Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "8",
+        "object_repr": "test3",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Items\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2020-04-12T00:08:04.012Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "8",
+        "object_repr": "test3",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Items\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2020-04-12T00:08:24.918Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "8",
+        "object_repr": "test3",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Items\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2020-04-12T00:37:45.974Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "8",
+        "object_repr": "test3",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2020-04-12T00:37:45.977Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "7",
+        "object_repr": "rrrr",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2020-04-12T00:37:45.978Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "6",
+        "object_repr": "dgf",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2020-04-12T16:52:58.731Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "17",
+        "object_repr": "asdf",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2020-04-12T16:52:58.742Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "16",
+        "object_repr": "asdf",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2020-04-12T16:52:58.743Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "15",
+        "object_repr": "asdf",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2020-04-12T16:52:58.744Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "14",
+        "object_repr": "asdf",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2020-04-12T16:52:58.746Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "13",
+        "object_repr": "asdf",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2020-04-12T16:52:58.747Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "12",
+        "object_repr": "asdf",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2020-04-12T16:52:58.749Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "11",
+        "object_repr": "asdf",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2020-04-12T16:52:58.750Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "10",
+        "object_repr": "asdf",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2020-04-12T18:14:54.252Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Enter the wasteland",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2020-04-12T18:15:11.760Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "2",
+        "object_repr": "Zombies Attack",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2020-04-12T18:15:44.809Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "3",
+        "object_repr": "Get some Rest",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2020-04-12T18:16:15.808Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "4",
+        "object_repr": "Hungry?",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2020-04-12T18:28:41.370Z",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "2",
+        "object_repr": "add",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2020-04-12T18:29:08.056Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "1",
+        "object_repr": "Explore",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2020-04-12T18:30:10.048Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "5",
+        "object_repr": "Injured",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2020-04-12T18:30:28.915Z",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "3",
+        "object_repr": "drop",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2020-04-12T18:30:31.488Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "Fight",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2020-04-12T18:31:58.910Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "6",
+        "object_repr": "Pillow",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2020-04-12T18:32:04.256Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "3",
+        "object_repr": "Rest",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2020-04-12T18:34:08.347Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "7",
+        "object_repr": "Refried Beans",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2020-04-12T18:34:12.348Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "4",
+        "object_repr": "Explore",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2020-04-12T19:01:16.410Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "1",
+        "object_repr": "Explore 1",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+        "action_time": "2020-04-12T19:01:33.806Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "Fight 2",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+        "action_time": "2020-04-12T19:02:42.125Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "5",
+        "object_repr": "Run 2",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+        "action_time": "2020-04-12T19:06:10.085Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "Fight 2",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Item\", \"Item action\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+        "action_time": "2020-04-12T19:12:50.983Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "3",
+        "object_repr": "Rest 3",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+        "action_time": "2020-04-12T19:16:11.109Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "6",
+        "object_repr": "Weakly exploring",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+        "action_time": "2020-04-12T19:16:55.487Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "6",
+        "object_repr": "Explore 3",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+        "action_time": "2020-04-12T19:18:38.419Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "5",
+        "object_repr": "Run 2",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Situation destination\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2020-04-12T19:21:15.432Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "7",
+        "object_repr": "Rest 4",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2020-04-12T19:23:51.967Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "4",
+        "object_repr": "Explore 4",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\", \"Situation source\", \"Situation destination\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2020-04-12T19:27:29.988Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "6",
+        "object_repr": "Log object (6)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+        "action_time": "2020-04-12T19:27:35.354Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "6",
+        "object_repr": "Log object (6)",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+        "action_time": "2020-04-12T19:34:35.757Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "7",
+        "object_repr": "Log object (7)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+        "action_time": "2020-04-12T19:34:56.289Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "8",
+        "object_repr": "Log object (8)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+        "action_time": "2020-04-12T23:06:56.470Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "9",
+        "object_repr": "Log object (9)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+        "action_time": "2020-04-13T01:43:31.606Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "19",
+        "object_repr": "tester",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+        "action_time": "2020-04-13T04:13:08.239Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "1",
+        "object_repr": "Explore",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+        "action_time": "2020-04-13T04:13:16.780Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "Fight",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+        "action_time": "2020-04-13T04:13:20.118Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "3",
+        "object_repr": "Rest",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+        "action_time": "2020-04-13T04:13:23.058Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "4",
+        "object_repr": "Explore",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+        "action_time": "2020-04-13T04:13:26.896Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "5",
+        "object_repr": "Run",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+        "action_time": "2020-04-13T04:13:30.359Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "6",
+        "object_repr": "Explore",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+        "action_time": "2020-04-13T04:13:33.884Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "7",
+        "object_repr": "Rest",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+        "action_time": "2020-04-13T04:15:14.719Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "2",
+        "object_repr": "Zombies Attack",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"description\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+        "action_time": "2020-04-13T04:15:32.605Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "4",
+        "object_repr": "Hungry",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+        "action_time": "2020-04-13T04:15:54.250Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "4",
+        "object_repr": "Hungry",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+        "action_time": "2020-04-13T04:16:34.109Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "4",
+        "object_repr": "Hungry",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"description\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+        "action_time": "2020-04-13T04:16:42.561Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "2",
+        "object_repr": "Zombies Attack",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"description\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+        "action_time": "2020-04-13T04:17:29.516Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "3",
+        "object_repr": "Get some rest",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\", \"description\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+        "action_time": "2020-04-13T04:17:34.796Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "4",
+        "object_repr": "Hungry",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+        "action_time": "2020-04-13T04:18:08.926Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "6",
+        "object_repr": "Weakly exploring",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"description\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+        "action_time": "2020-04-13T04:18:19.816Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "5",
+        "object_repr": "Injured",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"description\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+        "action_time": "2020-04-13T04:18:23.876Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "3",
+        "object_repr": "Get some rest",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+        "action_time": "2020-04-13T04:18:26.556Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Enter the wasteland",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+        "action_time": "2020-04-13T04:18:30.169Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "2",
+        "object_repr": "Zombies Attack",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+        "action_time": "2020-04-13T04:18:32.980Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "3",
+        "object_repr": "Get some rest",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 75,
+    "fields": {
+        "action_time": "2020-04-13T16:19:55.364Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Enter the wasteland",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 76,
+    "fields": {
+        "action_time": "2020-04-13T17:59:18.949Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "20",
+        "object_repr": "Run",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 77,
+    "fields": {
+        "action_time": "2020-04-13T18:09:29.054Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "11",
+        "object_repr": "Log object (11)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 78,
+    "fields": {
+        "action_time": "2020-04-13T18:09:29.062Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "10",
+        "object_repr": "Log object (10)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 79,
+    "fields": {
+        "action_time": "2020-04-13T18:09:29.064Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "9",
+        "object_repr": "Log object (9)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 80,
+    "fields": {
+        "action_time": "2020-04-13T18:33:37.092Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "15",
+        "object_repr": "Explore",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 81,
+    "fields": {
+        "action_time": "2020-04-13T18:33:47.835Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "20",
+        "object_repr": "Run",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 82,
+    "fields": {
+        "action_time": "2020-04-13T18:33:47.843Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "19",
+        "object_repr": "Run",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 83,
+    "fields": {
+        "action_time": "2020-04-13T18:33:47.844Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "18",
+        "object_repr": "Run",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 84,
+    "fields": {
+        "action_time": "2020-04-13T18:33:47.845Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "17",
+        "object_repr": "Run",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 85,
+    "fields": {
+        "action_time": "2020-04-13T18:33:47.847Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "16",
+        "object_repr": "Explore",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 86,
+    "fields": {
+        "action_time": "2020-04-13T18:33:47.848Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "14",
+        "object_repr": "Explore",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 87,
+    "fields": {
+        "action_time": "2020-04-13T18:33:47.850Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "13",
+        "object_repr": "Explore",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 88,
+    "fields": {
+        "action_time": "2020-04-13T18:33:47.851Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "12",
+        "object_repr": "Explore",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 89,
+    "fields": {
+        "action_time": "2020-04-13T18:33:47.852Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "11",
+        "object_repr": "Explore",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 90,
+    "fields": {
+        "action_time": "2020-04-13T18:33:47.854Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "7",
+        "object_repr": "Rest",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 91,
+    "fields": {
+        "action_time": "2020-04-13T18:33:47.855Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "6",
+        "object_repr": "Explore",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 92,
+    "fields": {
+        "action_time": "2020-04-13T18:33:47.857Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "5",
+        "object_repr": "Run",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 93,
+    "fields": {
+        "action_time": "2020-04-13T18:33:47.858Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "4",
+        "object_repr": "Explore",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 94,
+    "fields": {
+        "action_time": "2020-04-13T18:33:47.859Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "3",
+        "object_repr": "Rest",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 95,
+    "fields": {
+        "action_time": "2020-04-13T18:33:47.860Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "Fight",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 96,
+    "fields": {
+        "action_time": "2020-04-13T18:33:47.861Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "1",
+        "object_repr": "Explore",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 97,
+    "fields": {
+        "action_time": "2020-04-13T18:34:55.699Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "25",
+        "object_repr": "Explore",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 98,
+    "fields": {
+        "action_time": "2020-04-13T18:37:20.722Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "26",
+        "object_repr": "Fight",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 99,
+    "fields": {
+        "action_time": "2020-04-13T18:43:18.152Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "27",
+        "object_repr": "Run",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 100,
+    "fields": {
+        "action_time": "2020-04-13T18:43:34.107Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "28",
+        "object_repr": "Fight",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 101,
+    "fields": {
+        "action_time": "2020-04-13T18:44:24.529Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "29",
+        "object_repr": "Explore",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 102,
+    "fields": {
+        "action_time": "2020-04-13T18:47:51.864Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "30",
+        "object_repr": "Explore",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 103,
+    "fields": {
+        "action_time": "2020-04-13T18:48:04.780Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "31",
+        "object_repr": "Rest",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 104,
+    "fields": {
+        "action_time": "2020-04-13T18:48:22.737Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "30",
+        "object_repr": "Explore",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Situation destination\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 105,
+    "fields": {
+        "action_time": "2020-04-13T18:48:36.371Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "25",
+        "object_repr": "Explore",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 106,
+    "fields": {
+        "action_time": "2020-04-13T18:48:48.845Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "32",
+        "object_repr": "Fight",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 107,
+    "fields": {
+        "action_time": "2020-04-13T18:49:00.827Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "33",
+        "object_repr": "Rest",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 108,
+    "fields": {
+        "action_time": "2020-04-13T18:52:21.111Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "30",
+        "object_repr": "Explore",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 109,
+    "fields": {
+        "action_time": "2020-04-13T18:52:33.928Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "29",
+        "object_repr": "Explore",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 110,
+    "fields": {
+        "action_time": "2020-04-13T18:52:48.721Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "28",
+        "object_repr": "Fight",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 111,
+    "fields": {
+        "action_time": "2020-04-13T18:52:48.724Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "27",
+        "object_repr": "Run",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 112,
+    "fields": {
+        "action_time": "2020-04-13T18:52:48.725Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "26",
+        "object_repr": "Fight",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 113,
+    "fields": {
+        "action_time": "2020-04-13T18:53:25.127Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "34",
+        "object_repr": "Run",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 114,
+    "fields": {
+        "action_time": "2020-04-13T18:53:26.648Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "34",
+        "object_repr": "Run",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 115,
+    "fields": {
+        "action_time": "2020-04-13T18:53:41.203Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "35",
+        "object_repr": "Explore",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 116,
+    "fields": {
+        "action_time": "2020-04-13T18:54:12.229Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "36",
+        "object_repr": "Fight",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 117,
+    "fields": {
+        "action_time": "2020-04-13T18:54:25.758Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "31",
+        "object_repr": "Rest",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 118,
+    "fields": {
+        "action_time": "2020-04-13T18:54:38.515Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "37",
+        "object_repr": "Run",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 119,
+    "fields": {
+        "action_time": "2020-04-13T18:55:04.024Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "38",
+        "object_repr": "Rest",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 120,
+    "fields": {
+        "action_time": "2020-04-13T18:55:20.259Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "39",
+        "object_repr": "Fight",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 121,
+    "fields": {
+        "action_time": "2020-04-13T18:55:32.974Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "40",
+        "object_repr": "Explore",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 122,
+    "fields": {
+        "action_time": "2020-04-13T18:55:46.595Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "41",
+        "object_repr": "Run",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 123,
+    "fields": {
+        "action_time": "2020-04-13T18:56:23.083Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "33",
+        "object_repr": "Run",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 124,
+    "fields": {
+        "action_time": "2020-04-13T18:57:04.787Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "31",
+        "object_repr": "Rest",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Situation source\", \"Situation destination\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 125,
+    "fields": {
+        "action_time": "2020-04-13T18:57:57.123Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "37",
+        "object_repr": "Rest",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\", \"Situation destination\"]}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 126,
+    "fields": {
+        "action_time": "2020-04-13T18:58:11.858Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "38",
+        "object_repr": "Rest",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 127,
+    "fields": {
+        "action_time": "2020-04-13T18:58:15.651Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "39",
+        "object_repr": "Fight",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 128,
+    "fields": {
+        "action_time": "2020-04-13T18:58:20.960Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "40",
+        "object_repr": "Explore",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 129,
+    "fields": {
+        "action_time": "2020-04-13T18:58:25.765Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "41",
+        "object_repr": "Run",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 130,
+    "fields": {
+        "action_time": "2020-04-13T18:58:58.436Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "42",
+        "object_repr": "Run",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 131,
+    "fields": {
+        "action_time": "2020-04-13T18:59:16.759Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "43",
+        "object_repr": "Explore",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 132,
+    "fields": {
+        "action_time": "2020-04-13T18:59:32.587Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "44",
+        "object_repr": "Fight",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 133,
+    "fields": {
+        "action_time": "2020-04-13T18:59:40.513Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "45",
+        "object_repr": "Rest",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 134,
+    "fields": {
+        "action_time": "2020-04-13T18:59:58.722Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "46",
+        "object_repr": "Rest",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 135,
+    "fields": {
+        "action_time": "2020-04-13T19:00:24.235Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "47",
+        "object_repr": "Run",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 136,
+    "fields": {
+        "action_time": "2020-04-13T19:00:39.693Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "48",
+        "object_repr": "Fight",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 137,
+    "fields": {
+        "action_time": "2020-04-13T19:00:53.951Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "49",
+        "object_repr": "Explore",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 138,
+    "fields": {
+        "action_time": "2020-04-13T19:02:19.806Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "50",
+        "object_repr": "Run",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 139,
+    "fields": {
+        "action_time": "2020-04-13T19:02:31.994Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "51",
+        "object_repr": "Rest",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 140,
+    "fields": {
+        "action_time": "2020-04-13T19:02:41.880Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "52",
+        "object_repr": "Fight",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 141,
+    "fields": {
+        "action_time": "2020-04-13T19:02:57.484Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "53",
+        "object_repr": "Explore",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 142,
+    "fields": {
+        "action_time": "2020-04-13T19:03:23.695Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "54",
+        "object_repr": "Run",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 143,
+    "fields": {
+        "action_time": "2020-04-13T19:03:32.706Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "55",
+        "object_repr": "Explore",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 144,
+    "fields": {
+        "action_time": "2020-04-13T19:03:47.938Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "56",
+        "object_repr": "Rest",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "admin.logentry",
+    "pk": 145,
+    "fields": {
+        "action_time": "2020-04-13T19:04:14.660Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "57",
+        "object_repr": "Fight",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}, {
+    "model": "main_app.character",
+    "pk": 2,
+    "fields": {
+        "name": "bb",
+        "location": "sf",
+        "age": 67,
+        "occupation": "D",
+        "intellect": 6,
+        "toughness": 9,
+        "speed": 6,
+        "stamina": 2,
+        "luck": 6,
+        "strength": 3,
+        "user": 1,
+        "items": [4]
+    }
+}, {
+    "model": "main_app.character",
+    "pk": 3,
+    "fields": {
+        "name": "destroyer",
+        "location": "sf",
+        "age": 99,
+        "occupation": "C",
+        "intellect": 5,
+        "toughness": 5,
+        "speed": 5,
+        "stamina": 5,
+        "luck": 5,
+        "strength": 5,
+        "user": 2,
+        "items": [2, 3, 4]
+    }
+}, {
+    "model": "main_app.character",
+    "pk": 18,
+    "fields": {
+        "name": "Test Player",
+        "location": "SF",
+        "age": 45,
+        "occupation": "D",
+        "intellect": 9,
+        "toughness": 5,
+        "speed": 4,
+        "stamina": 3,
+        "luck": 2,
+        "strength": 1,
+        "user": 1,
+        "items": []
+    }
+}, {
+    "model": "main_app.character",
+    "pk": 19,
+    "fields": {
+        "name": "tester",
+        "location": "sf",
+        "age": 33,
+        "occupation": "C",
+        "intellect": 2,
+        "toughness": 2,
+        "speed": 2,
+        "stamina": 2,
+        "luck": 9,
+        "strength": 2,
+        "user": 1,
+        "items": [2, 3, 5]
+    }
+}]

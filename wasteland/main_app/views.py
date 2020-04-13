@@ -104,7 +104,7 @@ def edit_character(request, character_id):
     character = Character.objects.get(id=character_id)
 
     if request.method == 'POST':
-        form = EditCharacterForm(request.POST)
+        form = EditCharacterForm(request.POST, instance = character)
         if form.is_valid():
             character = form.save(commit=False)
             character.user = request.user
@@ -112,7 +112,7 @@ def edit_character(request, character_id):
             return redirect('character_detail', character.id)
     else:
         form = EditCharacterForm()
-    context = {'form': form}
-    return render(request, 'characters/character_form.html', context)
+        context = {'form': form}
+        return render(request, 'characters/character_form.html', context)
 
     return redirect('edit_character')

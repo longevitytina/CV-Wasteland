@@ -20,7 +20,7 @@ class CharacterForm(forms.ModelForm):
 class EditCharacterForm(forms.ModelForm):
     class Meta:
         model = Character
-        fields = ('name', 'location', 'age')
+        fields = ('name', 'location', 'age', 'intellect', 'toughness', 'speed', 'stamina', 'luck', 'strength')
 
 
 class ReactionForm(forms.ModelForm):

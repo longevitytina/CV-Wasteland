@@ -87,6 +87,7 @@ def character_play(request, character_id):
     if request.method == 'POST':
         if form.is_valid():
             new_reaction = form.save(commit=False)
+
             # new_reaction.character_id = character_id
             # set situation source = current sitation id
             # new_reaction.situation_source = current_situation

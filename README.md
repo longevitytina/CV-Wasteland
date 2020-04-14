@@ -20,6 +20,9 @@ In order to begin, first create an account or log in. Then create a character fr
 
 ## Wireframes
 
+![Wireframe1](/wasteland/main_app/img/ss1.png)
+![Wireframe2](/wasteland/main_app/img/ss2.png)
+![Wireframe3](/wasteland/main_app/img/ss3.png)
 
 ## License
 

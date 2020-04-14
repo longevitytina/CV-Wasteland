@@ -2,6 +2,15 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: rgba(94, 1, 1, 0.728);
+  background-image: url(./img/waste1.png);
+  background-size: unset;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  height: 100vh;
+  margin: ;
+  max-width: unset;
+  background-position: left bottom;
 }
 
 main {

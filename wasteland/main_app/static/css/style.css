@@ -1,8 +1,7 @@
 body {
-  background-image: url("../img/end.jpg");
+  background-image: url("../img/wasteland.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
 }
 
 footer {
@@ -17,17 +16,19 @@ footer {
 }
 
 .container {
+  margin-top: 3em;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1em;
-  padding: 0 2em;
+  grid-gap: 5em;
+  background-color: #96302992;
+  color: rgba(250, 245, 245, 0.845);
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .container {
     display: block;
     text-align: center;
-    padding: 0;
-    margin: 1rem 0;
   }
 }

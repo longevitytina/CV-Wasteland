@@ -1,17 +1,23 @@
 .container {
   margin-top: 3em;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 1em;
   text-align: center;
 }
 .content {
   background-color: #96302992;
+  color: rgba(250, 245, 245, 0.845);
 }
-/*
-@media only screen and (max-width: 800px) {
+.heading {
+  text-align: center;
+  font-size: 20vw;
+  font-family: "Nanum Brush Script", cursive;
+}
+
+@media only screen and (max-width: 500px) {
   .container {
     display: block;
     text-align: center;
   }
-} */
+}

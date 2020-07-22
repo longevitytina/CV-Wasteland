@@ -1,0 +1,33 @@
+.container {
+  width: 95%;
+  max-width: 1500px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1em;
+  margin: auto;
+}
+.header {
+  text-align: center;
+}
+.name {
+  text-align: center;
+}
+.buttons {
+  text-align: center;
+}
+.stats {
+  text-align: center;
+}
+.content-wrap {
+  /* display: grid; */
+  /* grid-template-columns: repeat(2, 1fr); */
+  /* grid-gap: 1em; */
+  background-color: #96302992;
+  color: rgba(250, 245, 245, 0.845);
+}
+
+@media only screen and (max-width: 400px) {
+  .content-wrap {
+    text-align: center;
+  }
+}

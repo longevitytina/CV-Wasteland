@@ -1,17 +1,17 @@
-.home-column {
-    border: 1px solid red;
-    padding: 1rem;
-    height: 10vw;
+.container {
+  margin-top: 3em;
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 5em;
 }
-
-.home-column-title {
-    border: 1px solid green;
-    margin-bottom: 1rem;
+.content {
+  background-color: #96302992;
+}
+/*
+@media only screen and (max-width: 800px) {
+  .container {
+    display: block;
     text-align: center;
-    font-size: 2vh;
-    font-weight: bold;
-}
-
-.home-column-info {
-    border: 1px solid blue;
-}
+  }
+} */

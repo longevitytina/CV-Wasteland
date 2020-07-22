@@ -8,52 +8,29 @@
 
 {% block content %}
 
-<div class="row mt-4">
-  <div class="col-4">
-    <div class="card text-center">
-      <div class="card-body">
-        <h1 class="card-title">Welcome back, {{ username }}</h1>
-        <a href="{% url 'new_character' %}" class="btn btn-primary">Add Character</a>
-      </div>
-    </div>
+  <div class="header">
+        <h1>Welcome back, {{ username }}</h1>
+        <a href="{% url 'new_character' %}" class="btn btn-secondary">Add Character</a>
   </div>
-  <div class="col-8">
+  </br>
+  <div class="container">
     {% for character in characters %}
-    <div class="card mb-2">
-      <div class="card-body">
-        <h3 class="card-title">{{ character.name }}</h5>
-        <div class="row">
-          <div class="card-text col-4">Age: {{ character.age }}</div>
-          <div class="card-text col-4">Location: {{ character.location }}</div>
-          <div class="card-text col-4">Occupation: {{ character.occupation }}</div>
-        </div>
-         <br>
-        <div class="row">
-          <div class="card-text col-2">Speed: {{ character.speed }}</div>
-          <div class="card-text col-2">Stamina: {{ character.stamina }}</div>
-          <div class="card-text col-2">Strength: {{ character.strength }}</div>
-        </div>
-        <div class="row">
-          <div class="card-text col-2">Intellect: {{ character.intellect }}</div>
-          <div class="card-text col-2">Toughness: {{ character.toughness }}</div>
-          <div class="card-text col-2">Luck: {{ character.luck }}</div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="card-text col-1">
-            <a href="{% url 'profile' %}{{character.id}}/" class="btn btn-secondary">Play</a>
-          </div>
-          <div class="card-text col-1">
-            <a href="{% url 'edit_character' character.id %}" class="btn btn-secondary">Edit</a>
-          </div>
-          <div class="card-text col-1">
-            <a href="{% url 'delete_character' character.id %}" class="btn btn-secondary">Delete</a>
-          </div>
-        </div>
+    <div class="content-wrap">
+      <div class="name">
+        <h3>{{ character.name }}</h5>
+        <div>Age: {{ character.age }} | Location: {{ character.location }} | Occupation: {{ character.occupation }}</div>
       </div>
+      <div class="stats">
+        <div>Speed: {{ character.speed }} Stamina: {{ character.stamina }} Strength: {{ character.strength }}</div>
+        <div>Intellect: {{ character.intellect }} Toughness: {{ character.toughness }} Luck: {{ character.luck }}</div>
+      </div>
+      <ul class="buttons">
+          <a href="{% url 'profile' %}{{character.id}}/" class="btn btn-secondary">Play</a>
+          <a href="{% url 'edit_character' character.id %}" class="btn btn-secondary">Edit</a>
+          <a href="{% url 'delete_character' character.id %}" class="btn btn-secondary">Delete</a>
+      </ul>
     </div>
     {% endfor %}
-  </div>
 </div>
 
 {% endblock %}

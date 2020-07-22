@@ -1,9 +1,9 @@
 .container {
   margin-top: 3em;
   display: grid;
-  /* grid-template-columns: repeat(3, 1fr); */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 5em;
+  grid-gap: 1em;
+  text-align: center;
 }
 .content {
   background-color: #96302992;

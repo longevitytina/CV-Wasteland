@@ -1,4 +1,27 @@
 img {
-  width: 100%;
+  width: 50%;
   margin-bottom: 2em;
+}
+
+.container {
+  width: 95%;
+  max-width: 1500px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1em;
+  margin-top: 2em;
+}
+
+.content {
+  background-color: #96302992;
+  color: rgba(250, 245, 245, 0.845);
+  text-align: center;
+  display: grid;
+  grid-template-rows: 130px 1fr auto;
+  justify-items: center;
+  /* align-items: center; */
+}
+
+.name {
+  padding-top: 2em;
 }

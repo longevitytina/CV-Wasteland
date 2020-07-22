@@ -6,29 +6,29 @@
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
 
-<div class="container">
 {% block content %}
-    <div class="content">
-        <h2>Description</h2>
-        <p>
-            This game was created to simulate survivors in a zombie wasteland. As the days pass, your survivor will
-            collect items, encounter zombies, and endure random events. Keep playing to see how long your survivor
-            can make it in the wasteland.
-        </p>
-    </div>
-    <div class="content">
-        <h2>Instructions</h2>
+    <div class="container">
+        <div class="content">
+            <h2>Description</h2>
             <p>
-                Login, create character, simulate
+                This game was created to simulate survivors in a zombie wasteland. As the days pass, your survivor will
+                collect items, encounter zombies, and endure random events. Keep playing to see how long your survivor
+                can make it in the wasteland.
             </p>
-    </div>
-    <div class="content">
-        <h2>Login</h2>
-        {% if user.is_authenticated %}
-            <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
-        {% else %}
-            <p>Welcome anonymous survivor, please log in.</p>
-        {% endif %}
+        </div>
+        <div class="content">
+            <h2>Instructions</h2>
+                <p>
+                    Login, create character, simulate
+                </p>
+        </div>
+        <div class="content">
+            <h2>Login</h2>
+            {% if user.is_authenticated %}
+                <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
+            {% else %}
+                <p>Welcome anonymous survivor, please log in.</p>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
-</div>

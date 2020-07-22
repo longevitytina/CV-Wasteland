@@ -1,0 +1,15 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 5em;
+}
+
+@media only screen and (max-width: 800px) {
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5em;
+  background-color: rgba(245, 245, 245, 0.119);
+}

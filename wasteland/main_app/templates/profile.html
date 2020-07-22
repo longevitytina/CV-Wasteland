@@ -9,7 +9,7 @@
 {% block content %}
 
   <div class="header">
-        <h1>Welcome back, {{ username }}</h1>
+        <h2>Welcome back, {{ username }}</h2>
         <a href="{% url 'new_character' %}" class="btn btn-secondary">Add Character</a>
   </div>
   </br>
@@ -17,7 +17,7 @@
     {% for character in characters %}
     <div class="content-wrap">
       <div class="name">
-        <h3>{{ character.name }}</h5>
+        <h2>{{ character.name }}</h2>
         <div>Age: {{ character.age }} | Location: {{ character.location }} | Occupation: {{ character.occupation }}</div>
       </div>
       <div class="stats">

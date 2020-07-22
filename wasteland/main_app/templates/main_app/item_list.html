@@ -1,21 +1,25 @@
 {% extends 'base.html' %}
+
+{% load static %}
+{% block cssfile %}
+<link rel="stylesheet" href="{% static 'css/item_list.css' %}">
+{% endblock %}
+
 {% block content %}
 
-<h1 class="mt-2">All items</h1>
-<div class="row">
+<h1 class="heading">All items</h1>
+<div class="container">
     {% for item in items %}
-    <div class="card col-md-4 mb-2">
-        <div class="card-body">
-            <h5 class="card-title">{{ item.name }}</h5>
-            <div class="card-text">Description: {{ item.description }}</div>
-            <div class="card-text">Type: {{ item.type }}</div>
-            <div class="card-action">
+        <div class="content-item">
+            <h5>{{ item.name }}</h5>
+            <div>Description: {{ item.description }}</div>
+            <div>Type: {{ item.type }}</div>
+            <div>
                 <a href="{% url 'item_edit' item.id %}" method="post">
                 {% csrf_token %}
                 EDIT</a>
             </div>
         </div>
-    </div>
     {% endfor %}
 </div>
 

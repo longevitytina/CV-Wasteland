@@ -1,0 +1,22 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2em;
+}
+.content-item {
+  background-color: #96302992;
+  text-align: center;
+}
+
+.heading {
+  text-align: center;
+}
+/* @media only screen and (max-width: 800px) { */
+/*
+  .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 5em;
+    background-color: rgba(245, 245, 245, 0.119);
+  } */
+/* } */

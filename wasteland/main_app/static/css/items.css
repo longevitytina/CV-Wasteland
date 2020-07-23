@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2em;
+}
+.content-item {
+  background-color: #96302992;
+  text-align: center;
+}
+.heading {
+  text-align: center;
+}
